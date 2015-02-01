@@ -1,5 +1,7 @@
-aha
 node_modules
 test
+
+!tmp
 tmp/*
+!logs
 logs/*
