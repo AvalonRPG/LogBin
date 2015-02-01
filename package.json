@@ -1,0 +1,19 @@
+{
+  "name": "logs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.11.0",
+    "busboy": "^0.2.9",
+    "event-stream": "^3.2.1",
+    "express": "^4.11.1",
+    "jade": "^1.9.0",
+    "node-static": "^0.7.6"
+  }
+}

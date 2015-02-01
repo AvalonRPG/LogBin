@@ -1,0 +1,61 @@
+doctype html
+html
+  head(lang="en")
+    title Logs
+    meta(http-equiv="content-type", content="text/html; charset=UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;")
+    link(rel="stylesheet", href="/css/semantic.min.css", type="text/css")
+    link(rel="stylesheet", href="/css/website.css", type="text/css")
+  body
+    .container
+      .content
+        .ui.top.attached.tabular.menu
+          a.active.item(data-tab="text") Text
+          a.item(data-tab="file") Upload File
+        .ui.bottom.attached.active.tab.segment(data-tab="text")
+          form.ui.form(method="post", action="/upload/text")
+            .inline.fields
+              label(for="type") Type
+              .field
+                .ui.radio.checkbox
+                  input(type="radio", name="type", value="1", checked)
+                  label Plain Text
+              .field
+                .ui.radio.checkbox
+                  input(type="radio", name="type", value="2")
+                  label Partial HTML
+            .field
+              label(for="text") Text
+              .ui.input
+                textarea(name="text")
+            button.ui.button.text.submit(data-action="upload text") Save Text
+
+
+        .ui.bottom.attached.tab.segment(data-tab="file")
+          form.ui.form(method="post", action="/upload/file", enctype="multipart/form-data")
+            .inline.fields
+              label(for="type") Type
+              .field
+                .ui.radio.checkbox
+                  input(type="radio", name="type", value="1", checked)
+                  label Plain Text
+              .field
+                .ui.radio.checkbox
+                  input(type="radio", name="type", value="2")
+                  label HTML Document
+              .field
+                .ui.radio.checkbox
+                  input(type="radio", name="type", value="3")
+                  label Mudlet Record
+            .field
+              .ui.action.input
+                input(type="text", disabled)#_attachmentName
+                label(for="attachmentName").ui.icon.button.btn-file
+                  i.file.icon
+                  input(type="file", name="attachmentName", style="display: none;")#attachmentName
+            button.ui.button.file.submit Upload File        
+
+    script(type="text/javascript", src="/js/jquery.js")
+    script(type="text/javascript", src="/js/jquery.serialize.js")
+    script(type="text/javascript", src="/js/semantic.min.js")
+    script(type="text/javascript", src="/js/website.js")
